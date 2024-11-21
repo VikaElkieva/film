@@ -155,16 +155,34 @@
             background-position: center;
         }
 
-        /* Mobile Styles */
+        /* Updated Mobile Styles */
         @media screen and (max-width: 768px) {
             .movies-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
+                grid-template-columns: repeat(3, 1fr); /* Fit more cards on mobile */
+                gap: 8px; /* Reduce gap */
+            }
+            .movie-card {
+                width: 150px; /* Reduce card size */
+            }
+            .movie-cover {
+                height: 200px; /* Smaller cover images */
             }
         }
-        @media screen and (min-width: 769px) {
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
             .movies-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(4, 1fr); /* Standard layout */
+                gap: 12px; /* Adjust gap */
+            }
+            .movie-card {
+                width: 180px; /* Medium size cards */
+            }
+            .movie-cover {
+                height: 250px;
+            }
+        }
+        @media screen and (min-width: 1025px) {
+            .movies-grid {
+                grid-template-columns: repeat(5, 1fr); /* Fit more cards on wide screens */
                 gap: 15px;
             }
         }
