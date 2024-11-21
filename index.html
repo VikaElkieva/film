@@ -155,17 +155,35 @@
             background-position: center;
         }
 
-        /* Updated Mobile Styles */
+        /* Enhanced Mobile Styles */
         @media screen and (max-width: 768px) {
             .movies-grid {
-                grid-template-columns: repeat(3, 1fr); /* Fit more cards on mobile */
-                gap: 8px; /* Reduce gap */
+                grid-template-columns: repeat(2, 1fr); /* Fit cards neatly on small devices */
+                gap: 10px; /* Adequate spacing */
+                padding: 0 10px; /* Add padding to prevent edge clipping */
             }
             .movie-card {
-                width: 150px; /* Reduce card size */
+                width: 100%; /* Full-width within the grid */
+                max-width: 180px; /* Cap the width */
+                margin: 0 auto; /* Center align */
             }
             .movie-cover {
-                height: 200px; /* Smaller cover images */
+                height: auto; /* Auto-scale height */
+                aspect-ratio: 3/4; /* Maintain proportions */
+            }
+        }
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .movies-grid {
+                grid-template-columns: repeat(3, 1fr); /* Adjust columns for tablets */
+                gap: 12px; /* Adjust gap */
+                padding: 0 15px; /* Extra padding for balance */
+            }
+        }
+        @media screen and (min-width: 1025px) {
+            .movies-grid {
+                grid-template-columns: repeat(4, 1fr); /* Standard desktop view */
+                gap: 15px;
+                padding: 0 20px; /* Maintain space on larger screens */
             }
         }
         @media screen and (min-width: 769px) and (max-width: 1024px) {
